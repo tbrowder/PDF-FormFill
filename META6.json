@@ -6,6 +6,8 @@
   "build-depends": [
   ],
   "depends": [
+    "MacOS::NativeLib",
+    "FontFactory::Type1"
   ],
   "description": "Given a text file with instructions, overlays data on pages of an input PDF document\n",
   "license": "Artistic-2.0",

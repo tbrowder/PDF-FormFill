@@ -41,15 +41,21 @@ attribute of the overlay.
 
 Notes:
 
-=item comments and blank lines are allowed but ignored.
-=item any line without a beginning C<code:> is ignored.
-=item paper size must be Letter (default) or A4.
+=item Comments and blank lines are allowed but ignored.
+=item Any line without a beginning C<code:> is ignored.
+=item Paper size must be Letter (default) or A4.
+=item X,Y values are the coordinates (in PS Points, 72/inch) 
+      of the starting point for the line of text on the page,
+       with origin at the lower left corner of the paper. 
+=item The C<font: code> includes the font size as described in 
+      package C<FontFactotory::Type1>. Default: C<t12> (Times-Roman, 12 points)
 
 =head3 Currently recognized codes
 
 =begin code
 begin: # not required but recommended for clarity for documentation
 paper: Letter
+font: <code from the desired font in package C<FontFactory::Type1>
 orientation: Portrait
 page: 1
 text: x,y,angle=0; the text to put on the line...

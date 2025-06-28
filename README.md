@@ -33,16 +33,21 @@ The user's desires are shown in single, coded input line. Blank lines and commen
 
 Notes:
 
-  * comments and blank lines are allowed but ignored.
+  * Comments and blank lines are allowed but ignored.
 
-  * any line without a beginning `code:` is ignored.
+  * Any line without a beginning `code:` is ignored.
 
-  * paper size must be Letter (default) or A4.
+  * Paper size must be Letter (default) or A4.
+
+  * X,Y values are the coordinates (in PS Points, 72/inch) of the starting point for the line of text on the page, with origin at the lower left corner of the paper. 
+
+  * The `font: code` includes the font size as described in package `FontFactotory::Type1`. Default: `t12` (Times-Roman, 12 points)
 
 ### Currently recognized codes
 
     begin: # not required but recommended for clarity for documentation
     paper: Letter
+    font: <code from the desired font in package C<FontFactory::Type1>
     orientation: Portrait
     page: 1
     text: x,y,angle=0; the text to put on the line...
