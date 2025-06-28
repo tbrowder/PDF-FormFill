@@ -16,7 +16,11 @@ use PDF::Overlay;
 DESCRIPTION
 ===========
 
-**PDF::Overlay** provides the user with the capability to overlay desired graphics on the pages of an existing PDF document. In order to do that, the user must first create a text file with appropriate instructions. Then use that file with the Raku script installed with this package.
+**PDF::Overlay** provides the user with the capability to overlay desired graphics on the pages of an existing PDF document. In order to do that, there are several steps to follow:
+
+Step 1. The user must create a text file (a template) with appropriate instructions to place the required information on a copy of the original document.
+
+Step 2. Create a data input file for any user with the required information to enter in the overlay file.
 
 The Raku script, `pdf-overlay`
 ------------------------------
@@ -37,11 +41,13 @@ Notes:
 
   * Any line without a beginning `code:` is ignored.
 
-  * Paper size must be Letter or A4. The default is `Paper`.
+  * Paper size must be Letter or A4. The default is `Paper`. The default is `t12` (Times-Roman, 12 points).
+
+  * The `font: code` includes the font size as described in the required package `FontFactotory::Type1`. Multiple font entries are allowed on succeeding line, with the most recent (lowest in the command list) overriding former settings.
 
   * X,Y values are the coordinates (in PS Points, 72/inch) of the starting point for the line of text on the page, with origin at the lower left corner of the paper. 
 
-  * The `font: code` includes the font size as described in the required package `FontFactotory::Type1`. The default is `t12` (Times-Roman, 12 points).
+  * Text is normally rendered parallel to the X axis, but it may be rotated if need be. Use the `angle=N` value where N is the desired angle with positive rotation in the counter-clockwise direction. The value is assumed to be zero (no rotation) if the `angle=?` space is empty.
 
 ### Currently recognized codes
 

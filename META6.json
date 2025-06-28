@@ -6,6 +6,7 @@
   "build-depends": [
   ],
   "depends": [
+    "PDF::GraphPaper",
     "MacOS::NativeLib",
     "FontFactory::Type1"
   ],

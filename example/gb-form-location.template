@@ -1,0 +1,69 @@
+# location data for the GBUMC form
+# the handler sub uses the location data
+# for position and angle information
+
+p11:
+p12:
+p13:
+p14:
+p15:
+p16:
+p17:
+
+p21:
+p22:
+p23:
+
+p2a1:
+p2a2:
+p2a3:
+p2a4:
+p2a5:
+
+# more blocks as needed to cover 1ast 10 years
+# add to p2g to match the esisting entries printed on the existing form
+p2b1:
+p2b2:
+p2b3:
+p2b4:
+p2b5:
+
+p2c1:
+p2c2:
+p2c3:
+p2c4:
+p2c5:
+
+p2d1:
+p2d2:
+p2d3:
+p2d4:
+p2d5:
+
+p2e1:
+p2e2:
+p2e3:
+p2e4:
+p2e5:
+
+p2f1:
+p2f2:
+p2f3:
+p2f4:
+p2f5:
+
+p2g1:
+p2g2:
+p2g3:
+p2g4:
+p2g5:
+
+# page 3
+
+p30:
+p31:
+p32:
+p33:
+p34:
+p35:
+

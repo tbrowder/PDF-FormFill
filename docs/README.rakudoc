@@ -14,9 +14,15 @@ use PDF::Overlay;
 =head1 DESCRIPTION
 
 B<PDF::Overlay> provides the user with the capability to overlay desired graphics
-on the pages of an existing PDF document. In order to do that, the user must
-first create a text file with appropriate instructions. Then use that file
-with the Raku script installed with this package.
+on the pages of an existing PDF document. In order to do that, there are several
+steps to follow:
+
+Step 1. The user must create a text file (a template) with appropriate 
+instructions to place the required information on a copy of the original
+document.
+
+Step 2. Create a data input file for any user with the required information
+to enter in the overlay file.
 
 =head2 The Raku script, C<pdf-overlay>
 
@@ -44,12 +50,20 @@ Notes:
 =item Comments and blank lines are allowed but ignored.
 =item Any line without a beginning C<code:> is ignored.
 =item Paper size must be Letter or A4. The default is C<Paper>.
+      The default is C<t12> (Times-Roman, 12 points).
+=item The C<font: code> includes the font size as described in 
+      the required package C<FontFactotory::Type1>. 
+      Multiple font entries are allowed on succeeding line,
+      with the most recent (lowest in the command list) 
+      overriding former settings.
 =item X,Y values are the coordinates (in PS Points, 72/inch) 
       of the starting point for the line of text on the page,
       with origin at the lower left corner of the paper. 
-=item The C<font: code> includes the font size as described in 
-      the required package C<FontFactotory::Type1>. 
-      The default is C<t12> (Times-Roman, 12 points).
+=item Text is normally rendered parallel to the X axis, but it
+      may be rotated if need be. Use the C<angle=N> value
+      where N is the desired angle with positive rotation in
+      the counter-clockwise direction. The value is assumed
+      to be zero (no rotation) if the C<angle=?> space is empty.
 
 =head3 Currently recognized codes
 

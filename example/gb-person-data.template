@@ -1,0 +1,24 @@
+# the data input file for one person
+
+last-name: 
+first-name:
+maiden-name:
+suffix: # Jr, III, etc., if any
+other-names:  # separate with commas
+date-of-birth: # mm/dd/yyyy
+place-of-birth: # include country if not a US state
+ssan: # 
+driver-license-number:
+driver-license-state:
+
+# current address
+address-street:
+address-other:
+address-city-state: # separate with commas
+address-zip-code:   
+address-county::
+length-of-time-at-address:
+# repeat the address block data for each previous address
+# till you provide all addresses for the last ten years
+
+
