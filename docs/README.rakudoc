@@ -4,18 +4,60 @@
 
 B<PDF::Overlay> - Given a text file with instructions, overlays data on pages of an input PDF document
 
-
 =head1 SYNOPSIS
 
 =begin code :lang<raku>
-
 use PDF::Overlay;
-
+...
 =end code
 
 =head1 DESCRIPTION
 
-B<PDF::Overlay> is ...
+B<PDF::Overlay> provides the user with the capability to overlay desired graphics
+on the pages of an existing PDF document. In order to do that, the user must
+first create a text file with appropriate instructions. Then use that file
+with the Raku script installed with this package.
+
+=head2 The Raku script, C<pdf-overlay>
+
+=begin code
+pdf-overlay --pdf-in <input PDF to overlay> --overlay <overlay description file> 
+    --pdf-out <output PDF>
+=end code
+
+=head2 The overlay description file
+
+=head3 Line format
+
+The user's desires are shown in single, coded input line. Blank lines and
+comments from a '#' to the end of a line are ignored. Each data line is
+first broken into one or more groups by a C<:> (colon) and a C<;> (semicolon).
+For example, this C<key0:> is one string group, this C<key1: some data> 
+becomes two string groups, and this 
+C<key2: other data; more data> has three string groups.
+The first group contains a code that governs some action. Any remaining
+groups provide information to contruct a specific overlay item or some
+attribute of the overlay. 
+
+Notes:
+
+=item comments and blank lines are allowed but ignored.
+=item any line without a beginning C<code:> is ignored.
+=item paper size must be Letter (default) or A4.
+
+=head3 Currently recognized codes
+
+=begin code
+begin: # not required but recommended for clarity for documentation
+paper: Letter
+orientation: Portrait
+page: 1
+text: x,y,angle=0; the text to put on the line...
+text: ....
+page: 3
+#...
+end: # not required but recommended for clarity for documentation
+=end code
 
 =head1 AUTHOR
 
