@@ -1,5 +1,3 @@
-#!/usr/bin/env raku
-
 use PDF::Overlay;
 use PDF::GraphPaper;
 
@@ -11,6 +9,7 @@ my %*SUB-MAIN-OPTS =
     :allow-no,                      # allow --no-foo as alternative to --/foo
     :numeric-suffix-as-value,       # allow -j2 as alternative to --j=2
 ;
+
 multi MAIN(
     # input 
     $file where *.IO.r, #= # a PDF document to overlay other data upon
@@ -22,5 +21,6 @@ multi MAIN(
     :$persondata,       #= # the file with the personal data to overlay
     :$debug,
     ) {
+    my $ifil = $file;
 
 }
