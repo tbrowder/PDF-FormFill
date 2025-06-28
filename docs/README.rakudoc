@@ -29,7 +29,7 @@ pdf-overlay --pdf-in <input PDF to overlay> --overlay <overlay description file>
 
 =head3 Line format
 
-The user's desires are shown in single, coded input line. Blank lines and
+The user's desires are shown in single, coded input lines. Blank lines and
 comments from a '#' to the end of a line are ignored. Each data line is
 first broken into one or more groups by a C<:> (colon) and a C<;> (semicolon).
 For example, this C<key0:> is one string group, this C<key1: some data> 
@@ -43,12 +43,13 @@ Notes:
 
 =item Comments and blank lines are allowed but ignored.
 =item Any line without a beginning C<code:> is ignored.
-=item Paper size must be Letter (default) or A4.
+=item Paper size must be Letter or A4. The default is C<Paper>.
 =item X,Y values are the coordinates (in PS Points, 72/inch) 
       of the starting point for the line of text on the page,
-       with origin at the lower left corner of the paper. 
+      with origin at the lower left corner of the paper. 
 =item The C<font: code> includes the font size as described in 
-      package C<FontFactotory::Type1>. Default: C<t12> (Times-Roman, 12 points)
+      the required package C<FontFactotory::Type1>. 
+      The default is C<t12> (Times-Roman, 12 points).
 
 =head3 Currently recognized codes
 

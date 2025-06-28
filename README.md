@@ -29,7 +29,7 @@ The overlay description file
 
 ### Line format
 
-The user's desires are shown in single, coded input line. Blank lines and comments from a '#' to the end of a line are ignored. Each data line is first broken into one or more groups by a `:` (colon) and a `;` (semicolon). For example, this `key0:` is one string group, this `key1: some data` becomes two string groups, and this `key2: other data; more data` has three string groups. The first group contains a code that governs some action. Any remaining groups provide information to contruct a specific overlay item or some attribute of the overlay. 
+The user's desires are shown in single, coded input lines. Blank lines and comments from a '#' to the end of a line are ignored. Each data line is first broken into one or more groups by a `:` (colon) and a `;` (semicolon). For example, this `key0:` is one string group, this `key1: some data` becomes two string groups, and this `key2: other data; more data` has three string groups. The first group contains a code that governs some action. Any remaining groups provide information to contruct a specific overlay item or some attribute of the overlay. 
 
 Notes:
 
@@ -37,11 +37,11 @@ Notes:
 
   * Any line without a beginning `code:` is ignored.
 
-  * Paper size must be Letter (default) or A4.
+  * Paper size must be Letter or A4. The default is `Paper`.
 
   * X,Y values are the coordinates (in PS Points, 72/inch) of the starting point for the line of text on the page, with origin at the lower left corner of the paper. 
 
-  * The `font: code` includes the font size as described in package `FontFactotory::Type1`. Default: `t12` (Times-Roman, 12 points)
+  * The `font: code` includes the font size as described in the required package `FontFactotory::Type1`. The default is `t12` (Times-Roman, 12 points).
 
 ### Currently recognized codes
 
