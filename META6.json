@@ -1,0 +1,25 @@
+{
+  "auth": "zef:tbrowder",
+  "authors": [
+    "Tom Browder"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "Given a text file with instructions, overlays data on pages of an input PDF document\n",
+  "license": "Artistic-2.0",
+  "name": "PDF::Overlay",
+  "perl": "6.d",
+  "provides": {
+    "PDF::Overlay": "lib/PDF/Overlay.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}
