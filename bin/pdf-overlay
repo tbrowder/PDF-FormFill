@@ -1,4 +1,5 @@
 use PDF::Overlay;
+use PDF::Lite;
 use PDF::GraphPaper;
 
 # define useful arg attributes
@@ -10,17 +11,32 @@ my %*SUB-MAIN-OPTS =
     :numeric-suffix-as-value,       # allow -j2 as alternative to --j=2
 ;
 
+my $data-dir = %*ENV<PDF_OVERLAY_PRIVATE_DIR> // '.'; #;
 multi MAIN(
     # input 
     $file where *.IO.r, #= # a PDF document to overlay other data upon
     # output 
     :$outfile,          #= # the output file with the desired overlay
     # options
-    :$vscale,           #= # overlay a vertical PS point scale
+    :v($vscale),           #= # overlay a vertical PS point scale
     :$datafile,         #= # the file with the output position data
     :$persondata,       #= # the file with the personal data to overlay
     :$debug,
     ) {
-    my $ifil = $file;
+
+    say "Data dir; $data-dir";
+    my $pdf = PDF::Lite.open: $file;
+    my $pc = $pdf.page-count;
+    say "Page count: $pc";
+    say "media box: ", $pdf.media-box;
+    if $vscale {
+        # overlay on the    
+        say "Adding a vscale on file '$file'...";
+    }
+    my $page-num = 0;
+    for $pdf.Pages.iterate-pages -> $page {
+        ++$page-num;
+        say "  Working page $page-num";
+    }
 
 }
