@@ -1,24 +1,24 @@
 # the data input file for one person
 
 # name
-last: 
-first: 
+last:
+first:
 maiden:
 suffix:       # Jr, III, etc., if any
 other-names:     # separate with commas
-dob: 0000-00-00  # date-of-birth: 
+dob: 0000-00-00  # date-of-birth:
 birth-place:                  # city, state # include country if not a US state
-ssan: 000-00-0000 # 
+ssan: 000-00-0000 #
 dl-number:    # driver-license-number:
-dl-state: 
+dl-state:
 
 # current address
 address1:
 address2:
-city: 
+city:
 state:
-zip-code:   
-county: 
+zip-code:
+county:
 date-to-address: 0000-00-00 # use a Date, calculate time from previous addresses
 
 # repeat the address block data for each previous address
@@ -27,10 +27,8 @@ date-to-address: 0000-00-00 # use a Date, calculate time from previous addresses
 # previous address
 address1:
 address2:
-city: 
+city:
 state:
-zip-code:   
-county: 
-date-to-address: 0000-00-00 # use a Date, calclate time from previous addresses
-
-
+zip-code:
+county:
+date-to-address: 0000-00-00 # use a Date, calculate time from previous addresses
