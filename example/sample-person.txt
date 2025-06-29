@@ -1,0 +1,38 @@
+# the data input file for one person
+
+# name
+last: Zulu
+first: Thomas
+maiden:
+suffix: Jr    # Jr, III, etc., if any
+other-names: Tom, Bones     # separate with commas
+dob: 0000-00-00  # date-of-birth:
+birth-place: McIntyre, GA # city, state # include country if not a US state
+ssan: 000-00-0000 #
+dl-number: D-xx-xx   # driver-license-number:
+dl-state: FL
+
+# current address
+address1: 8000 Fairlane Dr
+city: Gulf Breeze
+state: FL
+zip-code: 32561
+county: Santa Rosa
+date-to-address: 2022-01-01 # use a Date, calculate time from previous addresses
+
+# repeat the address block data for each previous address
+# till you provide all addresses for the last ten years
+
+# previous address
+address1: 8000 Oakmont Circle
+city: Gulf Breeze
+state: FL
+zip-code: 32561
+date-to-address: 2017-03-10 # use a Date, calculate time from previous addresses
+
+# previous address
+address1: 8000 Arizona Circle
+city: Gulf Breeze
+state: FL
+zip-code: 32561
+date-to-address: 2010-03-22 # use a Date, calculate time from previous addresses
