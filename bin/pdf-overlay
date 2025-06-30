@@ -1,9 +1,23 @@
-use PDF::Overlay;
+use MacOS::NativeLib "*";
 use PDF::Lite;
+use PDF::API6;
+use PDF::Lite;
+use PDF::Content::Color :ColorName, :color;
+use PDF::Content::XObject;
+use PDF::Tags;
+use PDF::Content::Text::Box;
+use PDF::Content::Page :PageSizes;
+
 use PDF::GraphPaper;
+use PDF::GraphPaper::Subs;
+use PDF::GraphPaper::Vars;
+use PDF::GraphPaper::GPaper;
+
+use PDF::Overlay;
 
 # define useful arg attributes
-my %*SUB-MAIN-OPTS = 
+# copied from the example in the docs
+my %*SUB-MAIN-OPTS =
     :named-anywhere,                # allow named variables at any location
     :bundling,                      # allow bundling of named arguments
     :coerce-allomorphs-to(Numeric), # coerce-allomorphic arguments to given type
@@ -13,10 +27,11 @@ my %*SUB-MAIN-OPTS =
 
 my $data-dir = %*ENV<PDF_OVERLAY_PRIVATE_DIR> // '.'; #;
 multi MAIN(
-    # input 
+    # input
     $file where *.IO.r, #= # a PDF document to overlay other data upon
-    # output 
+    # output
     :$outfile,          #= # the output file with the desired overlay
+
     # options
     :v($vscale),           #= # overlay a vertical PS point scale
     :$datafile,         #= # the file with the output position data
@@ -30,8 +45,19 @@ multi MAIN(
     say "Page count: $pc";
     say "media box: ", $pdf.media-box;
     if $vscale {
-        # overlay on the    
+        # overlay on the input PDF doc
+        my $gp = PDF::GraphPaper::GPaper.new: :margins(0);
+
         say "Adding a vscale on file '$file'...";
+        say "Units in inches";
+        my $page-num = 0;
+        for $pdf.Pages.iterate-pages -> $page {
+            ++$page-num;
+            say "  Working page $page-num";
+            create-grid :$page, :p($gp);
+        }
+        say "See vscale overlay on output file: '$outfile'";
+        exit;
     }
     my $page-num = 0;
     for $pdf.Pages.iterate-pages -> $page {

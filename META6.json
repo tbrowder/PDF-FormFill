@@ -6,9 +6,22 @@
   "build-depends": [
   ],
   "depends": [
-    "File::Find",
-    "PDF::GraphPaper",
+    "OO::Monitors",
     "MacOS::NativeLib",
+    "PDF::Lite",
+    "PDF::API6",
+    "PDF::Lite;",
+    "PDF::Content::Color :ColorName, :color",
+    "PDF::Content::XObject",
+    "PDF::Tags",
+    "PDF::Content::Text::Box",
+    "PDF::Content::Page :PageSizes",
+    "PDF::GraphPaper",
+    "PDF::GraphPaper::Subs",
+    "PDF::GraphPaper::Vars",
+    "Text::Utils:ver<3.4.5+>",
+    "CSV::Table",
+    "File::Find",
     "FontFactory::Type1"
   ],
   "description": "Given a text file with instructions, overlays data on pages of an input PDF document\n",
@@ -16,7 +29,9 @@
   "name": "PDF::Overlay",
   "perl": "6.d",
   "provides": {
-    "PDF::Overlay": "lib/PDF/Overlay.rakumod"
+    "PDF::Overlay": "lib/PDF/Overlay.rakumod",
+    "PDF::Overlay::Classes": "lib/PDF/Overlay/Classes.rakumod",
+    "PDF::Overlay::Subs": "lib/PDF/Overlay/Subs.rakumod"
   },
   "resources": [
   ],

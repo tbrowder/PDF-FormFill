@@ -2,3 +2,20 @@ Steal code from PDF::Combiner
 Steal code from PDF::NameTags
 Steal code from PDF::GraphPaper
 
+To initialize the data overlay process,
+populate classes for the total data input,
+one set for each page.
+
+Each data line has its own class.
+See separate module Classes;
+
+Create a sub to read the user's data and use the fields to create a hash used by the module. Creation is dynamic at run time.
+
+See new module Subs.
+
+The example overlay case should have its own data file or sub created on the fly or??
+
+The template files (new if necessary) should have the names of the desired format for each overlay entry.
+
+How does it all fit together with no duplicate data.
+

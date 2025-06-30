@@ -2,6 +2,8 @@ use Test;
 
 my @modules = <
     PDF::Overlay
+    PDF::Overlay::Classes
+    PDF::Overlay::Subs
 >;
 
 plan @modules.elems;

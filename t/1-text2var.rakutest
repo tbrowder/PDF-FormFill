@@ -1,0 +1,11 @@
+use Test;
+
+use PDF::Overlay;
+
+# from ChatGPT
+my $sam;
+OUR::{"\$" ~ "sam"} = "Sam";
+$sam = "Sam";
+isa-ok $sam, Str;
+
+done-testing;
