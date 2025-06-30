@@ -1,69 +1,77 @@
-# location data for the GBUMC form
-# the handler sub uses the location data
+# Location data for the GBUMC form.
+#
+# The handler sub uses the location data
 # for position and angle information
+#
+# The last section has the user's field names used
+# for that entry. The section is left blank if
+# no entry is desired for that overlay position.
 
-p11:
-p12:
-p13:
-p14:
-p15:
-p16:
-p17:
+p11: 0, 0, 0; first middle last suffix
+p12: 0, 0, 0; 
+p13: 0, 0, 0; 
+p14: 0, 0, 0; first, middle, maiden, last suffix
+p15: 0, 0, 0; other-names
+p16: 0, 0, 0; dob
+p17: 0, 0, 0; ????place-of-birth
 
-p21:
-p22:
-p23:
+p21: 0, 0, 0; ssan
+p22: 0, 0, 0; dl-number # driver license number
+p23: 0, 0, 0; dl-state
 
-p2a1:
-p2a2:
-p2a3:
-p2a4:
-p2a5:
+# addresses
+# current address
+p2a1: 0, 0, 0; address1
+p2a2: 0, 0, 0; city state
+p2a3: 0, 0, 0; zip-code
+p2a4: 0, 0, 0; county
+p2a5: 0, 0, 0; time-here
 
 # more blocks as needed to cover 1ast 10 years
-# add to p2g to match the esisting entries printed on the existing form
-p2b1:
-p2b2:
-p2b3:
-p2b4:
-p2b5:
+# add to p2g to match the existing entries printed on the existing form
+# each block has the same format as the current address
+p2b1: 0, 0, 0; 
+p2b2: 0, 0, 0; 
+p2b3: 0, 0, 0;
+p2b4: 0, 0, 0; 
+p2b5: 0, 0, 0;
 
-p2c1:
-p2c2:
-p2c3:
-p2c4:
-p2c5:
+p2c1: 0, 0, 0;
+p2c2: 0, 0, 0;
+p2c3: 0, 0, 0; 
+p2c4: 0, 0, 0;
+p2c5: 0, 0, 0;
 
-p2d1:
-p2d2:
-p2d3:
-p2d4:
-p2d5:
+p2d1: 0, 0, 0;
+p2d2: 0, 0, 0;
+p2d3: 0, 0, 0;
+p2d4: 0, 0, 0;
+p2d5: 0, 0, 0;
 
-p2e1:
-p2e2:
-p2e3:
-p2e4:
-p2e5:
+p2e1: 0, 0, 0;
+p2e2: 0, 0, 0;
+p2e3: 0, 0, 0;
+p2e4: 0, 0, 0;
+p2e5: 0, 0, 0;
 
-p2f1:
-p2f2:
-p2f3:
-p2f4:
-p2f5:
+p2f1: 0, 0, 0;
+p2f2: 0, 0, 0;
+p2f3: 0, 0, 0;
+p2f4: 0, 0, 0;
+p2f5: 0, 0, 0;
 
-p2g1:
-p2g2:
-p2g3:
-p2g4:
-p2g5:
+p2g1: 0, 0, 0;
+p2g2: 0, 0, 0;
+p2g3: 0, 0, 0;
+p2g4: 0, 0, 0;
+p2g5: 0, 0, 0;
 
 # page 3
 
-p30:
-p31:
-p32:
-p33:
-p34:
-p35:
+p30: 0, 0, 0; AS REQUIRED
+p31: 0, 0, 0; first middle last suffix
+p32: 0, 0, 0; address1 , city state zipcode
+p33: 0, 0, 0; phone
+p34: 0, 0, 0; email
+p35: 0, 0, 0; dob
 
