@@ -54,7 +54,7 @@ multi MAIN(
         for $pdf.Pages.iterate-pages -> $page {
             ++$page-num;
             say "  Working page $page-num";
-            create-grid :$page, :p($gp);
+#           create-grid :$page, :$gp;
         }
         say "See vscale overlay on output file: '$outfile'";
         exit;

@@ -1,0 +1,19 @@
+use Test;
+
+use PDF::GraphPaper;
+use PDF::GraphPaper::GPaper;
+
+use PDF::Overlay;
+
+my $gp = PDF::GraphPaper::GPaper.new: :margins(0);
+isa-ok $gp, PDF::GraphPaper::GPaper;
+
+done-testing;
+
+=finish
+
+lives-ok {
+    create-grid
+}
+
+done-testing;

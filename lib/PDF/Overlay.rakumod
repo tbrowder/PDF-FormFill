@@ -2,6 +2,10 @@ unit class PDF::Overlay;
 
 use Text::Utils :ALL;
 use CSV::Table; # use method save
+use PDF::GraphPaper;
+use PDF::GraphPaper::Subs;
+use PDF::GraphPaper::Vars;
+use PDF::GraphPaper::GPaper;
 
 sub parse-code-line-data(
     $file where *.IO.r,
