@@ -1,19 +1,32 @@
 use Test;
 
+use PDF::API6;
+use PDF::Content;
+use PDF::Lite;
+
 use PDF::GraphPaper;
 use PDF::GraphPaper::GPaper;
+use PDF::GraphPaper::Subs;
+use PDF::GraphPaper::Vars;
 
 use PDF::Overlay;
 
 my $gp = PDF::GraphPaper::GPaper.new: :margins(0);
 isa-ok $gp, PDF::GraphPaper::GPaper;
 
-done-testing;
+#done-testing;
+#=finish
 
-=finish
+my $pdf  = PDF::Lite.new;
+isa-ok $pdf, PDF::Lite;
 
+my $page = $pdf.add-page;
+isa-ok $page, PDF::Content::Page;
+
+#=begin comment
 lives-ok {
-    create-grid
+    create-grid :$page, :$gp;
 }
+#=end comment
 
 done-testing;
