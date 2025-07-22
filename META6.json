@@ -19,7 +19,7 @@
     "PDF::GraphPaper",
     "PDF::GraphPaper::Subs",
     "PDF::GraphPaper::Vars",
-    "Text::Utils:ver<3.4.5+>",
+    "Text::Utils:ver<4.0.1+>",
     "CSV::Table",
     "File::Find",
     "FontFactory::Type1"

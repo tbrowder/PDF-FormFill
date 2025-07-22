@@ -5,17 +5,17 @@ use PDF::Content;
 use PDF::Lite;
 
 use PDF::GraphPaper;
-use PDF::GraphPaper::GPaper;
+use PDF::GraphPaper::Classes;
 use PDF::GraphPaper::Subs;
 use PDF::GraphPaper::Vars;
 
 use PDF::Overlay;
 
-my $gp = PDF::GraphPaper::GPaper.new: :margins(0);
-isa-ok $gp, PDF::GraphPaper::GPaper;
+my $gp = PDF::GraphPaper::Classes::GPaper.new: :margins(0);
+isa-ok $gp, PDF::GraphPaper::Classes::GPaper;
 
-#done-testing;
-#=finish
+done-testing;
+=finish
 
 my $pdf  = PDF::Lite.new;
 isa-ok $pdf, PDF::Lite;
