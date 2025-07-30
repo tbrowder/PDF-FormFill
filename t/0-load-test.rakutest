@@ -1,9 +1,10 @@
 use Test;
 
 my @modules = <
-    PDF::Overlay
-    PDF::Overlay::Classes
-    PDF::Overlay::Subs
+    PDF::FormFill
+    PDF::FormFill::FreeFonts
+    PDF::FormFill::Classes
+    PDF::FormFill::Subs
 >;
 
 plan @modules.elems;

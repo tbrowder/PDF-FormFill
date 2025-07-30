@@ -1,11 +1,18 @@
-unit class PDF::Overlay;
+unit module PDF::FormFill;
 
 use Text::Utils :ALL;
 use CSV::Table; # use method save
+
+=begin comment
 use PDF::GraphPaper;
 use PDF::GraphPaper::Subs;
 use PDF::GraphPaper::Vars;
 use PDF::GraphPaper::GPaper;
+=end comment
+
+use PDF::FormFill::FreeFonts;
+use PDF::FormFill::Classes;
+use PDF::FormFill::Subs;
 
 sub parse-code-line-data(
     $file where *.IO.r,
@@ -49,6 +56,16 @@ sub handle-overlay-line(
     #     move to the proper position 
     #       transform the angle if necessary,
     #         print the text
+}
+
+sub create-left-scale(
+    # from PDF::GraphPaper
+    ) {
+}
+
+sub draw-line(
+    # from PDF::GraphPaper
+    ) {
 }
 
 =begin comment
