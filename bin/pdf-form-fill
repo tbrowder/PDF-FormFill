@@ -3,34 +3,131 @@ use PDF::Lite;
 use PDF::API6;
 use PDF::Lite;
 use PDF::Content::Color :ColorName, :color;
-use PDF::Content::XObject;
+#use PDF::Content::XObject;
 use PDF::Tags;
 use PDF::Content::Text::Box;
 use PDF::Content::Page :PageSizes;
+use File::Find;
 
+=begin comment
 use PDF::GraphPaper;
 use PDF::GraphPaper::Subs;
 use PDF::GraphPaper::Vars;
 use PDF::GraphPaper::GPaper;
+=end comment
 
-use PDF::FormFill
-
-# define useful arg attributes
-# copied from the example in the docs
-my %*SUB-MAIN-OPTS =
-    # allow named variables at any location
-    :named-anywhere,
-    # allow bundling of named arguments
-    :bundling,
-    # coerce-allomorphic arguments to given type
-    :coerce-allomorphs-to(Numeric),
-    # allow --no-foo as alternative to --/foo
-    :allow-no,
-    # allow -j2 as alternative to --j=2
-    :numeric-suffix-as-value,
-;
+use PDF::FormFill;
 
 my $data-dir = %*ENV<PDF_OVERLAY_PRIVATE_DIR> // '.'; #;
+
+# inputs
+my $inpdf  = ""; # a file name
+my $outpdf = ""; # a file name
+my $odata  = ""; # a file name
+my $pdata  = ""; # a file name
+my $vscale = 0;
+my $debug  = 0;
+my $force  = 0;
+my $show   = 0;
+
+if not @*ARGS {
+    print qq:to/HERE/;
+    Usage: {$*PROGRAM.basename} <inputs> [options...]
+
+    inputs:
+
+      inpdf=X  - where X is the input pdf file to overlay other data upon
+      outpdf=X - where X is the output pdf with the overlain data
+      odata=X  - where X is the file with the output position data
+      pdata=X  - where X is the file with the personal data to overlay
+
+    options:
+
+      s - show files listed in the private directory, if any
+      v - overlay a vertical PS point scale
+
+    HERE
+    exit;
+}
+
+sub do-fatal($arg) {
+    say "FATAL: Unknown arg '$arg'";
+    say "       Exiting...";
+    exit(1);
+}
+
+# find the inpdf 
+my $inpdf-basename;
+
+my @args;
+for @*ARGS {
+    when /^ :i inpdf '=' \h* (\S+) $/ {
+        my $a = ~$0;
+        # it must exist
+        unless $a.IO.r { do-fatal $a; }
+        $inpdf = $a;
+        $inpdf-basename = $inpdf.IO.basename;
+    }
+    default {
+        @args.push: $_;
+    }
+}
+
+for @args {
+    # inputs...
+    when /^ :i inpdf '=' \h* (\S+) $/ {
+        # this shouldn't happen
+        my $a = ~$0;
+        my $msg = "Unexpected input pdf in the list!";
+        do-fatal $msg;
+    }
+    when /^ :i outpdf '=' \h* (\S+) $/ {
+        my $a = ~$0;
+        # it must NOT have the same basename as inpdf
+        my $inpdf-bname = $inpdf;
+        my $outpdf-bname;
+
+        unless $a.IO.r { do-fatal $a; }
+        $inpdf = $a;
+    }
+    when /^ :i inpdf '=' \h* (\S+) $/ {
+        my $a = ~$0;
+        # it must exist
+        unless $a.IO.r { do-fatal $a; }
+        $inpdf = $a;
+    }
+    when /^ :i inpdf '=' \h* (\S+) $/ {
+        my $a = ~$0;
+        # it must exist
+        unless $a.IO.r { do-fatal $a; }
+        $inpdf = $a;
+    }
+    # options...
+    when /^ :i s $/ {
+        $show = 1;
+        last;
+    }
+    when /^ :i v $/ {
+        $vscale = 1;
+    }
+    default {
+        do-fatal $_;
+    }
+}
+
+if $show {
+    if $data-dir.IO ne $*CWD {
+        my @f = find :dir($data-dir), :type<file>;
+        say "  $_" for @f;
+        exit;
+    }
+    say "There is no private directory defined.";
+    exit;
+}
+
+# C<PDF_OVERLAY_PRIVATE_DIR=/some/private/directory/>
+
+=begin data
 multi MAIN(
     # input
     $file.IO.r,   #= # a PDF document to overlay other data upon
@@ -69,5 +166,7 @@ multi MAIN(
         ++$page-num;
         say "  Working page $page-num";
     }
-
 }
+=end data
+
+

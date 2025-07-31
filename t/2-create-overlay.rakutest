@@ -4,8 +4,21 @@ use PDF::API6;
 use PDF::Content;
 use PDF::Lite;
 
+use PDF::FormFill;
+use PDF::FormFill::FreeFonts;
+use PDF::FormFill::Subs;
+
+my $pdf = PDF::Lite.new;
+isa-ok $pdf, PDF::Lite;
+
+my $page = $pdf.add-page;
+isa-ok $page, PDF::Content::Page;
+
+my %fonts = get-loaded-fonts-hash;
+
 
 done-testing;
+
 =finish
 my $gp = PDF::GraphPaper::Classes::GPaper.new: :margins(0);
 isa-ok $gp, PDF::GraphPaper::Classes::GPaper;

@@ -8,6 +8,7 @@
   "depends": [
     "OO::Monitors",
     "MacOS::NativeLib",
+    "File::Find",
     "PDF::Lite",
     "PDF::API6",
     "PDF::Lite;",

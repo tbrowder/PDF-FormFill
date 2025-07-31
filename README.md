@@ -28,6 +28,11 @@ The Raku script, `pdf-overlay`
     pdf-overlay --pdf-in <input PDF to overlay> --overlay <overlay description file> 
         --pdf-out <output PDF>
 
+Private data
+------------
+
+Users' private data can be hidden from casual use by placing the files in a directory located at the location pointed to by environment variable `PDF_OVERLAY_PRIVATE_DIR=/some/private/directory/`
+
 The overlay description file
 ----------------------------
 
