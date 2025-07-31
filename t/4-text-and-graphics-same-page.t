@@ -59,7 +59,7 @@ $page.graphics: {
 }
 
 if $debug {
-    my $ofil = "test5.pdf";
+    my $ofil = "test4.pdf";
     $pdf.save-as: $ofil;
     say "DEBUG: See output pdf file: '$ofil'";
 }
