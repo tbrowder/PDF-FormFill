@@ -3,20 +3,20 @@
 NAME
 ====
 
-**PDF::Overlay** - Given a text file with instructions, overlays data on pages of an input PDF document
+**PDF::FormFill** - Given a text file with instructions, overlays data on pages of an input PDF document
 
 SYNOPSIS
 ========
 
 ```raku
-use PDF::Overlay;
+use PDF::FormFill;
 ...
 ```
 
 DESCRIPTION
 ===========
 
-**PDF::Overlay** provides the user with the capability to overlay desired graphics on the pages of an existing PDF document. In order to do that, there are several steps to follow:
+**PDF::FormFill** provides the user with the capability to overlay desired graphics on the pages of an existing PDF document. In order to do that, there are several steps to follow:
 
 Step 1. The user must create a text file (a template) with appropriate instructions to place the required information on a copy of the original document.
 

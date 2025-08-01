@@ -2,18 +2,18 @@
 
 =head1 NAME
 
-B<PDF::Overlay> - Given a text file with instructions, overlays data on pages of an input PDF document
+B<PDF::FormFill> - Given a text file with instructions, overlays data on pages of an input PDF document
 
 =head1 SYNOPSIS
 
 =begin code :lang<raku>
-use PDF::Overlay;
+use PDF::FormFill;
 ...
 =end code
 
 =head1 DESCRIPTION
 
-B<PDF::Overlay> provides the user with the capability to overlay desired graphics
+B<PDF::FormFill> provides the user with the capability to overlay desired graphics
 on the pages of an existing PDF document. In order to do that, there are several
 steps to follow:
 
