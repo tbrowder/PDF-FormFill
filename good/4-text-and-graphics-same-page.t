@@ -40,9 +40,13 @@ $page.graphics: {
     .font = $font, $font-size;
 
     #       .FillColor = rgb(1, .3, .3);  # reddish
-    .print("Simple Form", :position[300, 600], :aline<left>, :valign<top>);
+    .print("Simple Form", :position[300, 600], :align<left>, :valign<top>);
 
-    .print("Simple Form", :position[300, 500], :aline<center>, :valign<center>);
+    .print("Simple Form", :position[300, 500], :align<center>, :valign<center>);
+
+    .MoveTo: 300, 300;
+    .LineTo: 500, 300;
+    .CloseStroke;
 
     #   }
     #   my PDF::Content::XObject $jpeg .= open: "t/images/jpeg.jpg";

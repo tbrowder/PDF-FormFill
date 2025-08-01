@@ -1,8 +1,9 @@
 For our first case, overlay an overlay to get a scale AND numbers!
 
+Use code from from repo PDF-GraphPaper/dev/LScale
+
 Steal code from PDF::Combiner
 Steal code from PDF::NameTags
-Steal code from PDF::GraphPaper
 
 To initialize the data overlay process,
 populate classes for the total data input,
