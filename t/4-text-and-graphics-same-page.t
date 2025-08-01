@@ -2,6 +2,7 @@
 # modified by @tbrowder
 
 my $debug = 1;
+my $ofil = "test4.pdf";
 
 use Test;
 
@@ -63,7 +64,6 @@ $page.graphics: {
 }
 
 if $debug {
-    my $ofil = "test4.pdf";
     $pdf.save-as: $ofil;
     say "DEBUG: See output pdf file: '$ofil'";
 }

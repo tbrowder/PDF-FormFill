@@ -1,16 +1,17 @@
 use Test;
 
 my $debug = 1;
+my $ofil = "test3.pdf";
 
 # use required libs
 use MacOS::NativeLib "*";
-use PDF::API6;
+
 use PDF::Lite;
 use PDF::Content::Color :ColorName, :color;
 use PDF::Tags;
 use PDF::Content::Text::Box;
 
-use PDF::NameTags::FreeFonts;
+use PDF::FormFill::FreeFonts;
 
 plan 1;
 
@@ -29,7 +30,6 @@ my $text = "Test text";
 print-text $text, :$font, :$page;
 
 if $debug {
-    my $ofil = "test3.pdf";
     $pdf.save-as: $ofil;
     say "See output pdf file: $ofil";
 }

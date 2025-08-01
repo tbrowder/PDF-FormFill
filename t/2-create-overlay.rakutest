@@ -1,6 +1,5 @@
 use Test;
 
-use PDF::API6;
 use PDF::Content;
 use PDF::Lite;
 
@@ -15,7 +14,6 @@ my $page = $pdf.add-page;
 isa-ok $page, PDF::Content::Page;
 
 my %fonts = get-loaded-fonts-hash;
-
 
 done-testing;
 
