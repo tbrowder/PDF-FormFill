@@ -9,6 +9,7 @@
     "OO::Monitors",
     "MacOS::NativeLib",
     "File::Find",
+    "QueryOS",
     "PDF::Lite",
     "PDF::Font::Loader::HarfBuzz",
     "PDF::Font::Loader :load-font",
